@@ -1,0 +1,6 @@
+:root {
+  --fontFamily-nunito: 'Nunito', sans-serif;
+}
+@import "./light.css";
+@import "./regular.css";
+@import "./bold.css";
