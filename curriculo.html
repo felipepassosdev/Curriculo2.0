@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Currículo 2.0</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -19,13 +19,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-
         body {
             font-family: 'Nunito', sans-serif;
         }
@@ -33,6 +31,7 @@
         .left {
             background: -webkit-linear-gradient(left, rgba(23, 103, 239, .85), rgba(20, 196, 251, .85));
             height: 95vh;
+            overflow: auto;
         }
 
         .right {
@@ -63,6 +62,14 @@
             color: gray;
             margin-top: -16px;
         }
+
+        .card {
+            margin: 10px;
+        }
+
+        .numero {
+            margin-top: -15px;
+        }
     </style>
 </head>
 
@@ -71,125 +78,81 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-4 left">
-                        <div class="text-center foto">
-                            <img src="perfil.jpg" class="rounded-circle img-fluid" alt="...">
-                            <h5 class="text-white">@Felipepassosc</h5>
-                            <hr>
-                        </div>
+                    <div class="col-md-4 col-sm-12 left">
+                        
                         <div class="container">
-                            <h5 class="text-white text-center">Skills</h5>
-                            <div class="row r-one">
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="react.png" class="rounded img-fluid shadow-lg" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="js.png" class="rounded img-fluid shadow-lg" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="node.png" class="rounded img-fluid shadow-lg" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row r-two">
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="socketio.png" class="rounded img-fluid shadow-lg" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="bootstrap.png" class="rounded img-fluid shadow-lg" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <img src="materialize.png" class="rounded img-fluid shadow-lg" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <!-- <a target="_blank" href="https://felipe-passosc.web.app/">
-                                <h2 class="text-white text-center">Felipe-passosc</h2>
+                            <a target="_blank" href="https://felipe-passosc.web.app/">
+                                <h2 class="text-white text-center">Meu site</h2>
                             </a>
-                            <a target="_blank" href="https://agendar-me.web.app/">
-                                <h2 class="text-white text-center">Agendar-me</h2>
-                            </a> -->
+                            <a target="_blank" href="https://github.com/felipepassosc/">
+                                <h2 class="text-white text-center">Github</h2>
+                            </a>
+                            <a target="_blank"
+                                href="https://www.youtube.com/channel/UCdkEqWvQ05cNpI0wlRMyNWw/videos?view_as=subscriber">
+                                <h2 class="text-white text-center">Youtube</h2>
+                            </a>
+                            <!-- <a target="_blank" href="https://www.linkedin.com/in/felipe-passos-9417b0142/">
+                <h2 class="text-white text-center">Linkedin</h2>
+                <a target="_blank" href="https://www.instagram.com/felipepassosdev/">
+                  <h2 class="text-white text-center">Instagram</h2>  
+                 
+              </a> -->
                         </div>
                     </div>
-                    <div class="col-sm-8 right">
-                        <h1>Felipe Passos</h1>
-                        <p>Desenvolvedor Front end | React | Javascript | Projeto pessoal - Dev Hipster</p>
-                        <p class="cidade">Jundiaí, São Paulo, Brasil</p>
-                        <h3 class="text-center text-dark">Experiências</h3>
-                        <h3>Hackthon 🥇</h3>
-                        <p>Primeiro lugar em uma competição de programação, promovida pela prefeitura de jundiaí, com o
-                            apoio da Decathlon, CIJUN e ESEF. Nosso projeto foi o "Bora Correr", nesse projeto
-                            desenvolvemos um protótipo de aplicativo que ajuda as pessoas a saírem do sedentarismo, e eu
-                            tomei a frente do projeto desenvolvendo um sistema de gerenciamento do App(Usando React JS)
-                            e o site (Usando React JS e bootstrap)</p>
-                        <a target="_blank"
-                            href="https://cijun.sp.gov.br/2019/09/prefeitura-de-jundiai-premia-estudantes-vencedores-da-hackweekend/">Link
-                            da notícia</a>
+                    <div class="col-md-8 col-sm-12 right">
 
-                        <h3>Testes de software</h3>
-                        <p>Tive experiências com testes de software do time de inovação da empresa, ajudei a identificar
-                            problemas e com a ajuda dos meus colegas de equipe, passamos no processo de QA da Totvs e
-                            nossos
-                            aplicativos foram para o Fluig Store.</p>
-
-                        <h3>Desenvolvimento de sites responsivos</h3>
-                        <p>Desenvolvi o site do aplicativo “Easy Project” com o uso do Materialize e a linguagem
-                            JavaScript
-                            e também fiz modificações nos seguintes sites: “Site principal da empresa, “Make it easy”,
-                            “Easy
-                            Calendar”, “Easy Project” e “Easy Quality”</p>
-
-                        <h3>Sistema NPS Online</h3>
-                        <p>Desenvolvi um software de Net Promoter Score, que basicamente é usado para medir o grau de
-                            satisfação dos nossos clientes. Fiz o layout com Bootstrap e usei a linguagem JavaScript
-                            (Ecma
-                            6+), nesse projeto fiz consumo de API, uso de templates de email e criptografia.</p>
-
-                        <h3>Sistema de monitoramento dos Apps</h3>
-                        <p>Desenvolvi um sistema para monitorar o uso dos aplicativos da empresa, como última
-                            atualização,
-                            quantos clientes estão usando os aplicativo atualmente. O Desenvolvimento foi feito com as
-                            frameworks React JS no Front End, Node JS de Back end e uso do Mongodb (banco de dados não
-                            relacional) e mySQL (banco de dados relacional) para fazer as pesquisas no banco.</p>
-
-                        <h3>Projeto de apresentação “SEM PARAR”</h3>
-                        <p>Recebi o desafio de fazer um widget com integração a um processo do fluig, para a empresa
-                            “Sem
-                            parar” com um pouco mais de uma semana, o sistema era para cadastro de novos colaboradores
-                            que
-                            usariam o sistema para anexar Foto 3x4, RG, CPF e comprovante de residência, usei template
-                            de
-                            email, para poder mandar email automaticamente aos administradores do processo, quando o
-                            fluxo
-                            percorria, até chegar na aprovação.</p>
+                        <h3 class="text-center text-dark">Estudo</h3>
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <h3>Design Patterns no JavaScript – Factory</h3>
+                                <p><b>Factory Pattern</b> é uma forma excelente de reduzir/remover complexidades na
+                                    criação de objetos.
+                                    Os
+                                    exemplos deste artigo são simples, claro, mas não se deixe enganar. Factories podem
+                                    ser extremamante
+                                    complexos e tudo vai depender de quão complexo é a definição de seus objetos,
+                                    podendo conter inclusive
+                                    toda a parte de configuração.</p>
+                                <p><b>React Hooks</b> Com a utilização dos Hooks, possamos simplificar componentes
+                                    complexos e
+                                    tornar o código mais entendível e sustentável. </p>
+                                <p><b>Arquitetura Flux </b> é uma arquitetura usada pelo Facebook, que junto com o
+                                    framework React é
+                                    usado para construir aplicações web no client-side que trabalhem de forma reativa.
+                                    Basicamente uma
+                                    forma de fluxo unidirecional de dados entre eventos e ouvintes.</p>
+                                <p><b>Redux</b> é uma biblioteca JavaScript criada pelo Facebook para resolver um
+                                    problema inerente de
+                                    aplicações front-end conforme elas crescem em tamanho e complexidade. O Redux atende
+                                    as necessidades
+                                    de pelo menos um cenário comum em aplicações cliente, facilitando a comunicação
+                                    entre componentes sem
+                                    acoplá-los.</p>
+                                <p><b>Teste em React e nodeJS</b> para manter qualidade de software nos projetos, é
+                                    preciso ter uma
+                                    visão geral de
+                                    qualidade no processo de desenvolvimento de software, incluindo testes
+                                    automatizados, code review,
+                                    integração contínua, monitoramento, entre outros tópicos.</p>
+                                <p><b>Estudo de git e Github</b>- GitHub é uma plataforma de hospedagem de código-fonte
+                                    com controle de
+                                    versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário
+                                    cadastrado na
+                                    plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do
+                                    mundo. Afim de
+                                    estudar, ajudar a comunidade e aprimorar meus conhecimentos comecei a postar meus
+                                    projetos no github
+                                    como mencionado no topo da página.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+</script>
 
 </html>
