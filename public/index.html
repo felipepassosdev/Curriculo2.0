@@ -2,245 +2,266 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Currículo 2.0</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Currículo 2.0</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
 
-        .left {
-            background: -webkit-linear-gradient(left, rgba(23, 103, 239, .85), rgba(20, 196, 251, .85));
-            height: 95vh;
-            overflow: auto;
-        }
+    .left {
+      background: -webkit-linear-gradient(left, rgb(122, 7, 175), rgba(250, 81, 239, 0.85));
+      height: 95vh;
+      overflow: auto;
+    }
 
-        .right {
-            background: #fff;
-            height: 90vh;
-            overflow: auto;
-        }
+    .right {
+      background: #fff;
+      height: 90vh;
+      overflow: auto;
+    }
 
-        .foto {
-            margin-top: 10px;
-        }
+    .foto {
+      margin-top: 10px;
+    }
 
-        .r-one {
-            margin-bottom: 10px;
-        }
+    .r-one {
+      margin-bottom: 10px;
+    }
 
-        body {
-            overflow: hidden;
-            background-color: rgb(236, 236, 236);
-        }
+    body {
+      overflow: hidden;
+      background-color: rgb(236, 236, 236);
+    }
 
-        .container {
-            padding: 10px;
-        }
+    .container {
+      padding: 10px;
+    }
 
-        .cidade {
-            font-size: 13px;
-            color: gray;
-            margin-top: -16px;
-        }
+    .cidade {
+      font-size: 13px;
+      color: gray;
+      margin-top: -16px;
+    }
 
-        .card {
-            margin: 10px;
-        }
+    .card {
+      margin: 10px;
+    }
 
-        .numero {
-            margin-top: -15px;
-        }
-    </style>
+    .numero {
+      margin-top: -15px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 left">
-                    </div>
-                    <div class="col-md-8 col-sm-12 right">
-                        <h3 class="text-center text-dark">Conquistas</h3>
-                        <div class="card shadow-lg">
-                          <div class="card-body">
-                            <h3>Hackthon 🥇</h3>
-                            <p>Primeiro lugar em uma competição de programação, promovida pela prefeitura de jundiaí, com o
-                              apoio da Decathlon, CIJUN e ESEF. Nosso projeto foi o "Bora Correr", nesse projeto
-                              desenvolvemos um protótipo de aplicativo que ajuda as pessoas a saírem do sedentarismo, e eu
-                              tomei a frente do projeto desenvolvendo um sistema de gerenciamento do App(Usando React JS)
-                              e o site (Usando React JS e bootstrap). Um dos nossos prêmios foi a incubação do nossso projeto.</p>
-                            <img src="hackweekend-1170x650.jpg" class="img-fluid" alt="Responsive image">
-                            <a target="_blank"
-                              href="https://cijun.sp.gov.br/2019/09/prefeitura-de-jundiai-premia-estudantes-vencedores-da-hackweekend/">Link
-                              da notícia</a>
-                          </div>
-                        </div>
-                        <h3 class="text-center text-dark">Youtube 📺</h3>
-                        <div class="card shadow-lg">
-                          <div class="card-body">
-                            <p>Tenho um canal no youtube sobre tecnologia, programação, tutoriais. A ideia é compatilhar conhecimentos
-                             e poder ajudar a comunidade de alguma forma. Parafraseando o Fundador da Microsoft "Bill Gates", disse a seguinte frase e eu não poderia concordar mais, "O poder não vem do conhecimento mantido, vem do conhecimento compartilhado". 
-                             Além de ajudar outras pessoas nos ajuda também, seja fixando o conhecimento ou fazendo Networking.   
-                            </p>
-                          </div>
-                        </div>
-                        <div class="card shadow-lg">
-                          <div class="card-body">
-                            <h3>Github</h3>
-                            <p><b>PROJETO Devhipster - </b> Com o intuito de ajudar a comunidade e me desafiar como programador
-                              criei o Devhipster, que é uma plataforma de programação gratuita e open source
-                              que será usada pra postar cursos, lista de exercícios e vagas de emprego. Estou utilizando React,
-                              Styled Components, Axios, React-Bootstrap, entre outras tecnologias.
-                              link: <a href="https://github.com/felipepassosdev/devhipster" target="_blank">Projeto Devhipster</a>
-                            </p>
-            
-                            <p><b>PROJETO Bot discord - </b> Usando o discord com meus amigos, tiver a ideia de criar um bot que
-                              entrasse na conversa sempre que forem ditas certas palavras como "instagram", "github", "youtube" e
-                              automaticamente o bot já manda minhas redes socias, e se mandar palavras como "Bom dia/boa tarde/ boa
-                              noite" ou "Olá, adalberto" ele também responderá com frases pré-definidas. Estou fazendo novas
-                              atualizações, como uso do tensorflow para usar inteligência artificial nesse projeto. Usei tecnologias
-                              como NodeJS, ExpressJS, Biblioteca do Discord, além da implementação do Tensorflow.
-                              link: <a href="https://github.com/felipepassosdev/chatbot-nodejs-discord" target="_blank">Chatbot
-                                discord</a>
-                            </p>
-            
-                            <p><b>PROJETO VIACEP - </b>Iniciei um projeto ViaCep para poder usar o que aprendi
-                              no bootcamp Reactjs. Estou utilizando uma api do viacep pra pegar todos dados do cep e preencher os
-                              campos, utilizei axios, styled component, conceitos de propriedades, estado e ciclo de vida
-                              link: <a href="https://github.com/felipepassosc/viacep-reactjs" target="_blank">Projeto viaCep</a>
-                            </p>
-            
-                            <p><b>BOT INSTAGRAM/ TINDER - </b> Desenvolvi duas extensões para o google chrome, um bot para
-                              instagram, que as pessoas automaticamente e um bot para dar like no Tinder automaticamente, utilizando
-                              JavaScript.
-                              <a href="https://www.youtube.com/watch?v=HomitmIBfrk&t=6s" target="_blank">Bot do Instagram</a> &
-                              <a href="https://github.com/felipepassosdev/tinder-auto-like" target="_blank">Bot do Tinder</a>
-                            </p>
-            
-                            <p><b>PROJETO RESUMO DE TEXTO - </b> Desenvolvi um sistema (usando AngularJS/ Boostrap) para resumir
-                              textos em inglês, usando uma API do algorithmia. link: <a href="https://resumodetextos.web.app/"
-                                target="_blank">https://resumodetextos.web.app/</a></p>
-            
-                            <p><b>FACEBOOK CLONE - </b> Desenvolvi um clone do Facebook utilazando React, Styled
-                              Components,conceitos de propriedades, estado e ciclo de vida link: <a
-                                href="https://github.com/felipepassosc/facebook-clone-react" target="_blank">Clone
-                                Facebook-react</a></p>
-            
-                            <p><b>Sistema Bora Poupar - </b> Beta de um sistema(open source) para ajudar as pessoas à poupar e
-                              controlar melhor seus gastos
-                              (Usei: AngularJS + NodeJS + Bootstrap): <a href="https://github.com/felipepassosc/BoraPoupar"
-                                target="_blank">Sistema Bora Poupar</a></p>
-            
-                            <p><b>Sistema Queijo-io - </b> Beta de um sistema(open source) de chat em tempo real utilizando
-                              Socket.io
-                              (Usei: JavaScript + NodeJS + Socket.io + Bootstrap): <a
-                                href="https://github.com/felipepassosc/queijo.io" target="_blank">Sistema Queijo.io</a></p>
-            
-                            <p><b>Sistema Rolê - </b>Quer ir para algum role e não sabe qual? Apresento meu
-                              projeto favorito, "Rolê" tem como intuito mostrar todos os roles em jundiaí. Foi usado React,
-                              Bootstrap, NodeJS, ExpressJS e mongoDB</p>
-            
-                            <p><b>Sistema Pesquisar Repositórios GitHub - </b> Sistema para pesquisar repositórios, Utilazando api
-                              do Github, usei React, Styled Components,conceitos de propriedades, estado e ciclo de vida <a
-                                href="https://github.com/felipepassosc/queijo.io" target="_blank">Repositórios GitHub</a></p>
-            
-                            <p><b>Sistema de Eventos - </b>Beta do site focado em eventos, logo mais disponível
-                              para o uso, usei React, Bootstrap ,conceitos de propriedades, estado e ciclo de vida, NodeJS,
-                              ExpressJS e mongodb</p>
-                          </div>
-                        </div>
-                        <h3 class="text-center text-dark">Estudo</h3>
-                        <div class="card shadow-lg">
-                            <div class="card-body">
-                                <h3>Design Patterns no JavaScript – Factory</h3>
-                                <p><b>Inteligência Artificial</b> comecei o estudo sobre IA usando o tensorflow com
-                                    NodeJS. TensorFlow
-                                    é uma biblioteca de código aberto para aprendizado de máquina aplicável a uma ampla
-                                    variedade de
-                                    tarefas. É um sistema para criação e treinamento de redes neurais para detectar e
-                                    decifrar padrões e
-                                    correlações, análogo à forma como humanos aprendem e raciocinam.</p>
-                                <p><b>Factory Pattern</b> é uma forma excelente de reduzir/remover complexidades na
-                                    criação de objetos.
-                                    Os
-                                    exemplos deste artigo são simples, claro, mas não se deixe enganar. Factories podem
-                                    ser extremamante
-                                    complexos e tudo vai depender de quão complexo é a definição de seus objetos,
-                                    podendo conter inclusive
-                                    toda a parte de configuração.</p>
-                                <p><b>React Hooks</b> Com a utilização dos Hooks, possamos simplificar componentes
-                                    complexos e
-                                    tornar o código mais entendível e sustentável. </p>
-                                <p><b>Arquitetura Flux </b> é uma arquitetura usada pelo Facebook, que junto com o
-                                    framework React é
-                                    usado para construir aplicações web no client-side que trabalhem de forma reativa.
-                                    Basicamente uma
-                                    forma de fluxo unidirecional de dados entre eventos e ouvintes.</p>
-                                <p><b>Redux</b> é uma biblioteca JavaScript criada pelo Facebook para resolver um
-                                    problema inerente de
-                                    aplicações front-end conforme elas crescem em tamanho e complexidade. O Redux atende
-                                    as necessidades
-                                    de pelo menos um cenário comum em aplicações cliente, facilitando a comunicação
-                                    entre componentes sem
-                                    acoplá-los.</p>
-                                <p><b>Testes automatizados em React e nodeJS</b> para manter qualidade de software nos
-                                    projetos, é
-                                    preciso ter uma
-                                    visão geral de
-                                    qualidade no processo de desenvolvimento de software, incluindo testes
-                                    automatizados, code review,
-                                    integração contínua, monitoramento, entre outros tópicos.</p>
-                                <p><b>Estudo de git e Github</b>- GitHub é uma plataforma de hospedagem de código-fonte
-                                    com controle de
-                                    versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário
-                                    cadastrado na
-                                    plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do
-                                    mundo. Afim de
-                                    estudar, ajudar a comunidade e aprimorar meus conhecimentos comecei a postar meus
-                                    projetos no github
-                                    como mencionado no topo da página.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card shadow-lg">
-                            <div class="card-body">
-                                <h3>Formação acadêmica</h3>
-                                <p>
-                                  Faculdade Impacta Tecnologia
-                                  Tecnologo, Análise e Desenvolvimento de Sistema · (2019 - 2021)</p>
-                                <h3>Inglês</h3>
-                                <p>Atualmente faço Rosetta Stone, tenho conversas em grupo e aulas particulares. O programa utiliza imagens, texto, som e vídeo para ensinar palavras e gramática 
-                                  por meio de repetição espaçada, sem tradução. A empresa chama este método de "Imersão Dinâmica". Me sinto seguro e
-                                  compreendo conversas cotidianas, tenho boas habilidades comunicativas e a cada dia procuro mais
-                                  expandir meu vocabulário. </p>
-                            </div>
-                        </div>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4 col-lg-4 col-sm-12 left">
+            <div class="text-center foto">
+              <img src="perfil.jpg" class="rounded-circle img-fluid" alt="..." style="height: 150px; width: 150px">
+              <a href="https://www.instagram.com/felipepassosdev/" target="_blank">
+                <h5 class="text-white">@Felipepassosdev</h5>
+              </a>
+              <hr>
+            </div>
+            <div class="container">
+              <h5 class="text-white text-center">Skills</h5>
+              <div class="skills">
+                <div class="row r-one">
+                  <div class="col-sm-4">
+
+                    <img src="react.png" class="rounded img-fluid shadow-lg" alt="ReactJS" data-toggle="tooltip"
+                      data-placement="left" title="ReactJS">
+
+                  </div>
+                  <div class="col-sm-4">
+
+                    <img src="js.png" class="rounded img-fluid shadow-lg" alt="JavaScript" data-toggle="tooltip"
+                      data-placement="left" title="JavaScript">
+
+                  </div>
+                  <div class="col-sm-4">
+
+                    <img src="rtl.png" class="rounded img-fluid shadow-lg" alt="RTL" data-toggle="tooltip"
+                      data-placement="left" title="RTL">
+
+                  </div>
+                </div>
+                <div class="row r-two">
+                  <div class="col-sm-4">
+
+                    <img src="cypress.png" class="rounded img-fluid shadow-lg" alt="Cypress" data-toggle="tooltip"
+                      data-placement="left" title="Cypress">
+
+                  </div>
+                  <div class="col-sm-4">
+
+                    <img src="redux.png" class="rounded img-fluid shadow-lg" alt="Redux" data-toggle="tooltip"
+                      data-placement="left" title="redux">
+
+                  </div>
+                  <div class="col-sm-4">
+
+                    <img src="ts.png" class="rounded img-fluid shadow-lg" alt="Typescript" data-toggle="tooltip"
+                      data-placement="left" title="Typescript">
+
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <a target="_blank" href="https://www.linkedin.com/in/felipe-passos-9417b0142/">
+                <h2 class="text-white text-center">LinkedIn</h2>
+              </a>
+              <a target="_blank" href="https://github.com/felipepassosc/">
+                <h2 class="text-white text-center">Github</h2>
+              </a>
+              <a target="_blank"
+                href="https://open.spotify.com/show/5vss9hT6DPFlVDdlp03RTO">
+                <h2 class="text-white text-center">Podcast</h2>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-8 col-lg-8 col-sm-12 right">
+            <div class="row">
+              <div class="col-sm-8">
+                <h1>Felipe Passos</h1>
+              </div>
+              <div class="col-sm-4">
+                <p>felipepassosc@gmail.com</p>
+                <p class="text-center numero">(35)9 9761-9398</p>
+              </div>
+            </div>
+            <p>Software Engineer - JavaScript | Typescript | React | Context Api | Redux | Testing Library | Cypress | Front end @ Bees / AB InBev 🍺</p>
+            <p class="cidade">Jundiaí, São Paulo, Brasil</p>
+
+            <h3 class="text-center text-dark">About me</h3>
+            <div class="card shadow-lg">
+              <div class="card-body">
+                <p>I'm a Front-End Developer with experience in developing responsive and accessible web applications. I'm passionate about building beautiful and functional interfaces that provide a great user experience.
+
+                    I am passionate about programming and teaching. I have worked as a programming instructor, creating projects for my students, and I also run an Instagram profile and podcast focused on programming. I believe that teaching is a way of learning even more, and I am happy to contribute to the development of others in this fascinating field.                    
+                </p>
+              </div>
+            </div>
+            <h3 class="text-center text-dark">Professional experience</h3>
+            <div class="card shadow-lg">
+              <div class="card-body">
+               <h3>Software Engineer II - Ambev 🍺</h3> 
+                <p>I'm currently part of BEES, the technology division of the largest brewery in the world, Ambev. In our team, we use technologies like Typescript, React, Effector, Context, Git, Azure, and implement unit testing using React Testing Library and Jest, as well as component testing with Cypress, following SCRUM for agile development. Our current project is a marketplace for products for bars and beer-related establishments. We are responsible for developing the inventory, orders, dashboard, reports, insights, and engagement micro-frontends. We practice pair programming and code review, and adhere to clean code and refactoring principles.
+                
+                I recently gave a talk at Bees Talks about "What it's like to be a Frontend Dev?", discussing the technologies and methodologies we use in our team. I also created a study plan for beginners in my team, as I'm passionate about education and knowledge sharing, and believe it's a great way to learn.
+                </p>
+              </div>
+            </div>
+            <div class="card shadow-lg">
+              <div class="card-body">
+                <h3>Host 🎙️</h3>
+                <p>Podcast - Only Dev Fans</p><a target="_blank" href="https://open.spotify.com/show/5vss9hT6DPFlVDdlp03RTO"><p>Link</p></a>
+              </div>
+            </div>
+            <div class="card shadow-lg">
+              <div class="card-body">
+                <h3>Instructor Content Creator - Digital House 📚</h3>
+                <p>I worked as an Instructor Content Creator - Front End - Developed content for JavaScript, TypeScript, React, Unit Testing classes, 
+                    and more. Also, I developed ideas and projects to be used in classes and recorded video lessons explaining the code that was created.</p>
+              </div>
+            </div>
+            <div class="card shadow-lg">
+              <div class="card-body">
+                <h3>Software Engineer</h3>
+                <p> Restaurant System - I provided consulting services for a food industry company and developed a Restaurant System (POS). The technologies used were React, Bootstrap, and Swagger. The project took three months to complete, and I handled all of the front-end development.
+
+                    BoraPoupar - A web system built with React and TypeScript for the front end, and NodeJS/Express with a NoSQL MongoDB database for the back end. The project's goal is to promote financial education.</p>
+              </div>
+            </div>
+            <div class="card shadow-lg">
+              <div class="card-body">
+                <h3>Kroton 📖</h3>
+                <p>
+                    I participated in Kraton's Midgard team (Cogna Educação), the second-largest education-related company in the world.
+                     A global reference in the education sector for market value and the number of students. Innovative and a leader in the development and application of educational technologies. Technologies we used on the team are React, Redux, NodeJS. We used techniques like Pair programming, Code Review, and used the Scaled Agile Framework.Kroton 📚 I participated in Kraton's Midgard team (Cogna Educação), the second-largest education-related company in the world. A global reference in the education sector for market value and the number of students. Innovative and a leader in the development and application of educational technologies. Technologies we used on the team are React, Redux, NodeJS. We used techniques like Pair programming, Code Review, and used the Scaled Agile Framework.
+                   </p>
+              </div>
+            </div>
+            <div class="card shadow-lg">
+                <div class="card-body">
+                  <h3>Software Developer</h3>
+                  <p>
+                      I participated in Kraton's Midgard team (Cogna Educação), the second-largest education-related company in the world.
+                       A global reference in the education sector for market value and the number of students. Innovative and a leader in the development and application of educational technologies. Technologies we used on the team are React, Redux, NodeJS. We used techniques like Pair programming, Code Review, and used the Scaled Agile Framework.Kroton 📚 I participated in Kraton's Midgard team (Cogna Educação), the second-largest education-related company in the world. A global reference in the education sector for market value and the number of students. Innovative and a leader in the development and application of educational technologies. Technologies we used on the team are React, Redux, NodeJS. We used techniques like Pair programming, Code Review, and used the Scaled Agile Framework.
+                     </p>
+                </div>
+              </div>
+              <div class="card shadow-lg">
+                <div class="card-body">
+                  <h3>Software Developer(internal project)</h3>
+                  <p>
+                    I participated in internal company projects, such as Easy project - a system focused on project management, Make it Easy - which is basically a system for working with the agile kanban method, similar to Trello's features, Easy Qualy - focused on quality management, and applications for companies - Technologies used include Angular JS, Angular 2+, bootstrap, and I also worked on developing workflows and automation with Javascript and frameworks.
+
+                    Development of applications for Android and iOS with React Native, web applications with ReactJS, APIs with NodeJS with MongoDB;
+                    Development of web applications (creation of forms, workflow, and widgets) in HTML, CSS, and JavaScript (using AngularJS framework), integration with systems through web services and APIs for the TOTVS Fluig platform. </p>
+                    
+                    <h3>Sem Parar (outsourcing) 🚗</h3>
+                    <p>I work in the company Sem Parar( leader in the automatic payment sector for tolls and parking). I received a Developer challenge to integrate a system with a fluig process for the company and finished this project in just over a week. 
+                        The system was for registering new employees, who would use it to attach a 3x4 photo, ID, CPF and proof of residence. I used email templates to automatically send emails to process administrators when the flow progressed until it reached approval.</p>
+                    
+                    <h3>Grupo iv2 (internal project) 👨‍💻</h3>
+                     <p>I developed a Net Promoter Score software, which is basically used to measure the degree of satisfaction of our customers. I used Bootstrap for the layout and the JavaScript language (ECMA 6+) and also did API consumption, use of email templates, and encryption in this project.</p>
+                    
+                </div>
+              </div>
+
+            <h3 class="text-center text-dark">Accomplishments</h3>
+            <div class="card shadow-lg">
+              <div class="card-body">
+                    <h3>Hackthon 🥇</h3>
+                    <p>First place in a programming competition promoted by the city hall of Jundiaí, with the support of Decathlon, CIJUN, and ESEF. 
+                        Our project was called "Bora Correr", and we developed a prototype of an app that helps people get out of a sedentary lifestyle. I took the lead in the project by developing a management system for the app (using React JS) and the website (using React JS and Bootstrap). One of our prizes was the incubation of our project.</p>
+                    <img src="hackweekend-1170x650.jpg" class="img-fluid" alt="Responsive image">
+                    <div>
+                    <a target="_blank"
+                    href="https://cijun.sp.gov.br/2019/09/prefeitura-de-jundiai-premia-estudantes-vencedores-da-hackweekend/">Link</a>
+                    <h3>English</h3>
+                    <p> I take weekly English classes at Fluency Pass, do daily practice in English, and have an exchange program scheduled for the end of the year.</p>
                     </div>
                 </div>
             </div>
+
+            <div class="card shadow-lg">
+              <div class="card-body">
+                <h3>Academic Education"</h3>
+                <p>
+                  Faculdade Impacta Tecnologia
+                  Bacharelado, Análise e Desenvolvimento de Sistema · (2019 - 2021)</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </body>
 <script>
 </script>
